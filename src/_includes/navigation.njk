@@ -1,0 +1,15 @@
+{% macro renderNavList(entry) -%}
+{% if entry.url !== '/' + locale + '/' %}
+<li class="nav-item px-2 px-md-4 py-1 py-sm-0">
+  <a href="{{ entry.url | url }}" class="nav-link">{{entry.title}}</a>
+</li>
+{% endif %}
+{%- endmacro %}
+
+<ul class="navbar-nav mx-auto">
+  {%- for item in collections[locale] | eleventyNavigation -%}{{ renderNavList(item) }}
+  {% endfor -%}
+  {% include "languages.njk" %}
+</ul>
+<a class="btn btn-primary rounded-pill text-capitalize mt-3 mt-sm-0" target="_blank" href="#go">{{ 'Open application' |
+  i18n }}</a>

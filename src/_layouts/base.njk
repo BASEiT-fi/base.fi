@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{ locale }}" dir="{{ dir }}">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{site.title}} - {{ title or meta.title }}</title>
+
+  <link rel="shortcut icon" href="{{ '/assets/favicons/favicon.png' | url }}?v{{ pkg.version }}">
+  <link rel="stylesheet" href="{{ '/assets/styles/main.css' | url }}?v{{ pkg.version }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css"
+    integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  {% include "meta.njk" %}
+</head>
+
+<body>
+  <!-- skiplinks -->
+  <a href="#main" class="visually-hidden-focusable">Skip to main content</a>
+  {% include "navbar.njk" %}
+  {{ content | safe }}
+  {% include "footer.njk" %}
+</body>
+
+</html>

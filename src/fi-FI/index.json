@@ -1,0 +1,11 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Laadukkaita palveluita tekijöille"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Kotisivu",
+    "order": 0
+  }
+}

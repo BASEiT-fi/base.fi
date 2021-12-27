@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css?family=Spartan:400,500,700|Roboto:400,500");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
+
+.navbar {
+  .navbar-brand {
+    img {
+      max-height: 4rem;
+    }
+  }
+}
+footer {
+  .navbar-brand {
+    img {
+      max-height: 4rem;
+    }
+  }
+}
+
+body.headroom--top {
+  .navbar {
+    .navbar-brand {
+      #logo-white {
+        display: inline-block !important;
+      }
+    }
+  }
+}
+body.headroom--not-top {
+  .navbar {
+    .navbar-brand {
+      #logo-yellow {
+        display: inline-block !important;
+      }
+    }
+  }
+}
