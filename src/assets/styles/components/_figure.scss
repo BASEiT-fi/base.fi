@@ -58,13 +58,14 @@ figure {
     &::after {
       transition: opacity 0.2s;
       position: absolute;
-      opacity: 0.2;
+      opacity: 0.4;
       top: 0;
       right: 0;
       bottom: 0;
       left: 0;
       content: "";
-      background: $primary;
+      background: $dark;
+      // background: radial-gradient(circle closest-corner, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
     }
   }
 

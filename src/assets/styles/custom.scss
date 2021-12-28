@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Spartan:400,500,700|Roboto:400,500");
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
+// @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 
 .navbar {
   .navbar-brand {
@@ -16,21 +16,21 @@ footer {
   }
 }
 
-body.headroom--top {
-  .navbar {
-    .navbar-brand {
-      #logo-white {
-        display: inline-block !important;
-      }
-    }
-  }
-}
-body.headroom--not-top {
-  .navbar {
-    .navbar-brand {
-      #logo-yellow {
-        display: inline-block !important;
-      }
-    }
-  }
-}
+// body.headroom--top {
+//   .navbar {
+//     .navbar-brand {
+//       #logo-white {
+//         display: inline-block !important;
+//       }
+//     }
+//   }
+// }
+// body.headroom--not-top {
+//   .navbar {
+//     .navbar-brand {
+//       #logo-yellow {
+//         display: inline-block !important;
+//       }
+//     }
+//   }
+// }

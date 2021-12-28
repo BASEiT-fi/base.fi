@@ -32,7 +32,7 @@
     padding: rem(16) 0;
 
     &.navbar-dark {
-      background: $black;
+      background: $dark;
     }
 
     &.navbar-light {
@@ -63,7 +63,7 @@
 // uncolapsed on small screen
 .navbar-active {
   .navbar-dark {
-    background: $black;
+    background: $dark;
   }
 
   .navbar-light {
