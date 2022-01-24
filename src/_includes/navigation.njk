@@ -1,7 +1,7 @@
 {% macro renderNavList(entry) -%}
 {% if entry.url !== '/' + locale + '/' %}
 <li class="nav-item">
-  <a href="{{ entry.url | url }}"
+  <a href="{% if entry.url.startsWith('http') == false %}{{site.url}}{% endif %}{{ entry.url | url }}"
     class="nav-link{% if entry.url == page.url %} text-primary{% endif %}">{{entry.title}}</a>
 </li>
 {% endif %}
