@@ -5,18 +5,24 @@ new Headroom(document.querySelector("body"), {
   }
 }).init();
 
-tns({
-  container: '.carousel-data',
-  controls: false,
-  gutter: 48,
-  loop: false,
-  nav: false,
-  responsive: {
-    0: { items: 2 },
-    768: { items: 3 },
-    1200: { items: 3 },
-  }
-});
+if ($(".carousel-data").length) {
+  tns({
+    container: '.carousel-data',
+    controls: false,
+    gutter: 48,
+    loop: false,
+    nav: false,
+    responsive: {
+      0: { items: 2 },
+      768: { items: 3 },
+      1200: { items: 3 },
+    }
+  });
+}
+
+if ($("#player").length) {
+  const player = new Plyr('#player');
+}
 
 AOS.init();
 
@@ -99,10 +105,7 @@ function disableForm(id, disable = true, reset) {
     });
   }
 
-  // $("input#fc-phone").intlTelInput({
-  //   utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/8.4.6/js/utils.js"
-  // });
-  const phoneInputs = document.querySelectorAll("#fc-phone");
+  const phoneInputs = document.querySelectorAll("#yourPhone");
   if (phoneInputs.length > 0) {
     window.intlTelInputGlobals.loadUtils("https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/utils.min.js");
     Array.prototype.forEach.call(
