@@ -16,21 +16,16 @@ footer {
   }
 }
 
-// body.headroom--top {
-//   .navbar {
-//     .navbar-brand {
-//       #logo-white {
-//         display: inline-block !important;
-//       }
-//     }
-//   }
-// }
-// body.headroom--not-top {
-//   .navbar {
-//     .navbar-brand {
-//       #logo-yellow {
-//         display: inline-block !important;
-//       }
-//     }
-//   }
-// }
+.iti {
+  width: 100%;
+}
+
+.min-vh-25 {
+  min-height: 25vh !important;
+}
+.min-vh-50 {
+  min-height: 50vh !important;
+}
+.min-vh-75 {
+  min-height: 75vh !important;
+}

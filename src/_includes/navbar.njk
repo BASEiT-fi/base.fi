@@ -1,8 +1,8 @@
 <nav id="mainNav" class="navbar navbar-expand-lg navbar-sticky navbar-dark">
   <div class="container">
-    <a href="index.html" class="navbar-brand me-3">
-      <!-- <img src="{{site.url}}/assets/svgs/BASE.White.svg" alt="BASE.fi" class="d-none" id="logo-white" />
-      <img src="{{site.url}}/assets/svgs/BASE.Yellow.svg" alt="BASE.fi" class="d-none" id="logo-yellow" /> -->
+    <a href="{{ '/' + locale + '/' | url }}" class="navbar-brand me-3">
+      <!-- <img src="{{site.url}}/assets/svgs/BASE.White.svg" alt="BASE.fi" class="d-none" id="logo-white" /> -->
+      <!-- <img src="{{site.url}}/assets/svgs/BASE.Yellow.svg" alt="BASE.fi" class="d-none" id="logo-yellow" /> -->
       <img src="{{site.url}}/assets/svgs/BASE.White.svg" alt="BASE.fi" />
     </a>
 
@@ -15,33 +15,14 @@
       </li>
       <li class="nav-item d-none d-lg-block">
         <a href="apply" class="btn btn-outline-white rounded-pill ms-2">
-          Liity kumppaniksi
+          {{ 'Join us' | i18n }}
         </a>
       </li>
     </ul>
 
     <div class="collapse navbar-collapse d-flex justify-content-center text-uppercase" id="navbar"
       data-bs-parent="#mainNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#" role="button">Toimialat</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" role="button">Palvelut asiakkaille</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" role="button">Työntekijöille</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" role="button">Yhteystiedot</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" role="button">Kirjaudu</a>
-        </li>
-        <li class="nav-item d-lg-none">
-          <a href="apply" class="nav-link text-primary">Apply</a>
-        </li>
-      </ul>
+      {% include "navigation.njk" %}
     </div>
   </div>
 </nav>

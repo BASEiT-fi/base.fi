@@ -63,14 +63,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets/favicons");
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
-  eleventyConfig.addPassthroughCopy("src/assets/styles/bootstrap-examples");
   eleventyConfig.addPassthroughCopy("src/assets/scripts/");
   eleventyConfig.addPassthroughCopy("src/assets/svgs");
   eleventyConfig.addPassthroughCopy("src/assets/docs");
+  eleventyConfig.addPassthroughCopy("src/assets/videos");
   eleventyConfig.addPassthroughCopy({
     "node_modules/headroom.js/dist/headroom.min.js": "/assets/scripts/vendor.headroom.min.js",
     "node_modules/aos/dist/aos.js": "/assets/scripts/vendor.aos.js",
     "node_modules/tiny-slider/dist/min/tiny-slider.js": "/assets/scripts/vendor.tiny-slider.js",
+    "node_modules/plyr/dist/plyr.polyfilled.min.js": "/assets/scripts/vendor.plyr.polyfilled.min.js",
   });
 
   // Watch target for local dev

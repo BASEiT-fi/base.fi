@@ -1,0 +1,11 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Työntekijöille"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Työntekijöille",
+    "order": 300
+  }
+}

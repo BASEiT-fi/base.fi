@@ -1,0 +1,11 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Toimialat"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Toimialat",
+    "order": 100
+  }
+}

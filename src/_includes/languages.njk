@@ -4,17 +4,25 @@
 .slice(2)
 .join('/') %}
 {% if locales.length %}
-<li class="nav-item px-2 px-md-4 py-1 py-sm-0 dropdown">
-  <a class="nav-link dropdown-toggle text-decoration-none" title="{{ 'select_language' | i18n }}" href="{{ locale }}"
+<li class="nav-item dropdown dropdown-hover">
+  <a class="nav-link dropdown-toggle text-decoration-none" title="{{ 'Select language' | i18n }}" href="{{ locale }}"
     id="languageSelectorDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <img src="{{site.url}}/assets/images/flags/{{ locale }}.svg" alt="" class="border mr-1" height="24" />
   </a>
-  <div class="dropdown-menu" aria-labelledby="languageSelectorDropdown">
+  <ul class="dropdown-menu dropdown-menu-detailed" aria-labelledby="languageSelectorDropdown">
     {% for entry in locales -%}
-    <a href="/{{ entry.code }}/{#{ pageUrl }#}" class="dropdown-item {{ 'disabled' if locale === entry.code else '' }}"
-      rel="alternate" hreflang="{{ entry.code }}"><img src="{{site.url}}/assets/images/flags/{{ entry.code }}.svg"
-        alt="{{ entry.label }}" class="pe-2" height="24" />{{ entry.label }}</a>
+    <li>
+      <a href="/{{ entry.code }}/{#{ pageUrl }#}"
+        class="dropdown-item {{ 'disabled' if locale === entry.code else '' }}" rel="alternate"
+        hreflang="{{ entry.code }}">
+
+        <img src="{{site.url}}/assets/images/flags/{{ entry.code }}.svg" alt="{{ entry.label }}"
+          class="pe-2 {{ 'opacity-50' if locale === entry.code else '' }}" height="24" />
+        {{ entry.label }}
+
+      </a>
+    </li>
     {% endfor -%}
-  </div>
+  </ul>
 </li>
 {% endif %}

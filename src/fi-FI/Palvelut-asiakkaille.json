@@ -1,0 +1,11 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Palvelut-asiakkaille"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Palvelut-asiakkaille",
+    "order": 200
+  }
+}

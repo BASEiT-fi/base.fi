@@ -1,0 +1,12 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Kirjaudu"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "url": "https://base.likeit.fi/jsp/Login.jsp",
+    "key": "Kirjaudu",
+    "order": 500
+  }
+}

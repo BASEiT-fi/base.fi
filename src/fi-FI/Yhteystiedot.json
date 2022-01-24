@@ -1,0 +1,11 @@
+{
+  "tags": "fi-FI",
+  "meta": {
+    "title": "Yhteystiedot"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Yhteystiedot",
+    "order": 400
+  }
+}

@@ -1,0 +1,39 @@
+<section class="py-15 py-xl-20">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-6">
+        <h2 class="fw-bold mb-6">Ota yhteyttä</h2>
+        <form id="formContacts" name="formContacts">
+          <fieldset>
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label for="yourName" class="form-label">{{ 'Name' | i18n }}</label>
+                <input type="text" class="form-control" id="yourName" placeholder="{{ 'Name' | i18n }}">
+              </div>
+              <div class="col-md-6">
+                <label for="yourEmail" class="form-label">{{ 'Email' | i18n }}</label>
+                <input type="text" class="form-control" id="yourEmail" placeholder="{{ 'Email' | i18n }}">
+              </div>
+              <div class="col-md-12">
+                <label for="yourPhone" class="form-label">{{ 'Phone' | i18n }}</label>
+                <div class="input-group">
+                  <input type="text" class="form-control" id="yourPhone" placeholder="{{ 'Phone' | i18n }}">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <label for="yourMessage" class="form-label">{{ 'Message' | i18n }}</label>
+                <textarea class="form-control" id="yourMessage" rows="3"
+                  placeholder="{{ 'Message' | i18n }}"></textarea>
+              </div>
+              <div class="col-md-8 mt-4">
+                <a href="" class="btn btn-lg btn-primary btn-with-icon rounded-pill">{{ 'Send' | i18n }}<i
+                    class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
