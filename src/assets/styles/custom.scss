@@ -29,3 +29,12 @@ footer {
 .min-vh-75 {
   min-height: 75vh !important;
 }
+
+.svg-baseit {
+  display: inline-block;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

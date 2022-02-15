@@ -72,6 +72,7 @@ module.exports = function (eleventyConfig) {
     "node_modules/aos/dist/aos.js": "/assets/scripts/vendor.aos.js",
     "node_modules/tiny-slider/dist/min/tiny-slider.js": "/assets/scripts/vendor.tiny-slider.js",
     "node_modules/plyr/dist/plyr.polyfilled.min.js": "/assets/scripts/vendor.plyr.polyfilled.min.js",
+    "node_modules/flexsearch/dist/flexsearch.bundle.js": "/assets/scripts/vendor.flexsearch.bundle.js",
   });
 
   // Watch target for local dev

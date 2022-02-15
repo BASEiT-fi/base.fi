@@ -1,7 +1,6 @@
 module.exports = {
   "BASE": {
     "fi-FI": "BASE",
-    "sv-SE": "BASE",
     "ru-RU": "BASE",
   },
   "Trusted by": {
@@ -30,7 +29,22 @@ module.exports = {
   },
   "Select language": {
     "fi-FI": "Valitse kieli",
-    "sv-SE": "Välj språk",
     "ru-RU": "Выберите язык",
-  }
+  },
+  "Desired position": {
+    "fi-FI": "Haluttu asema",
+    "ru-RU": "Желаемая должность",
+  },
+  "careers": {
+    "fi-FI": "uraa",
+    "ru-RU": "профессий",
+  },
+  "available right now": {
+    "fi-FI": "tarjolla juuri nyt",
+    "ru-RU": "доступных прямо сейчас",
+  },
+  "all": {
+    "fi-FI": "kaikki",
+    "ru-RU": "все",
+  },
 };

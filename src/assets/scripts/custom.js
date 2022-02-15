@@ -1,4 +1,4 @@
-new Headroom(document.querySelector("body"), {
+let headroom = new Headroom(document.body, {
   tolerance: {
     up: 5,
     down: 10
@@ -18,6 +18,20 @@ if ($(".carousel-data").length) {
       1200: { items: 3 },
     }
   });
+}
+if ($(".carousel-logos-footer").length) {
+  tns({
+    container: '.carousel-logos-footer',
+    controls: false,
+    gutter: 48,
+    loop: false,
+    nav: false,
+    responsive: {
+      0: { items: 2 },
+      768: { items: 4 },
+      1200: { items: 6 },
+    },
+  })
 }
 
 if ($("#player").length) {

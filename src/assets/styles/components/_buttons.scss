@@ -92,9 +92,10 @@
   display: inline-block;
   border: $border-width solid $border-color;
   color: $secondary;
+  margin-bottom: rem(6);
 
   &:not(:last-child) {
-    margin-right: rem(4);
+    margin-right: rem(6);
   }
 
   &:hover {

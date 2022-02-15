@@ -1,11 +1,11 @@
 {
   "tags": "en-GB",
   "meta": {
-    "title": "Laadukkaita palveluita tekijöille"
+    "title": "Quality services for agents"
   },
   "layout": "base",
   "eleventyNavigation": {
-    "key": "Kotisivu",
+    "key": "Home page",
     "order": 0
   }
 }

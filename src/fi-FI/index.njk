@@ -8,15 +8,15 @@
         <div class="grouped-inputs p-1 rounded-pill bg-white">
           <div class="row g-0">
             <div class="col-md-3">
-              <select class="form-select form-select-lg px-4" aria-label="Default select example">
-                <option selected>Design</option>
+              <select id="jobs-locations" class="form-select form-select-lg px-4" aria-label="Default select example">
+                <!-- <option selected>Design</option>
                 <option value="1">Development</option>
-                <option value="2">Marketing</option>
+                <option value="2">Marketing</option> -->
               </select>
             </div>
             <div class="col-md-6">
               <input type="text" class="form-control form-control-lg px-4" aria-label="Text input with dropdown button"
-                placeholder="Desired position">
+                placeholder="{{ 'Desired position' | i18n }}">
             </div>
             <div class="col-md-3 d-grid">
               <a href="" class="btn btn-primary btn-lg rounded-pill">Etsiä</a>
@@ -57,92 +57,7 @@
         <h2 class="fw-light"><span class="fw-bold">Yli 50 yritystä</span> etsii sinua, selaa työpaikkoja.</h2>
       </div>
     </div>
-    <div class="row g-1">
-      <div class="col-md-6 col-lg-8 col-xl-6" data-aos="fade-up">
-        <a href="" class="card h-100 bg-white card-hover-border">
-          <div class="card-wrap">
-            <div class="card-header pb-0">
-              <span class="text-muted">22 openings</span>
-            </div>
-            <div class="card-footer mt-auto">
-              <h3 class="card-title">Managment & Finance</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="100">
-        <a href="" class="card equal-lg-1-1 bg-white card-hover-border">
-          <div class="card-wrap">
-            <div class="card-header pb-0">
-              <span class="text-muted">22 openings</span>
-            </div>
-            <div class="card-footer mt-auto">
-              <h3 class="card-title">Sales & Marketing</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="200">
-        <a href="" class="card equal-lg-1-1 bg-white card-hover-border">
-          <div class="card-wrap">
-            <div class="card-header pb-0">
-              <span class="text-muted">22 openings</span>
-            </div>
-            <div class="card-footer mt-auto">
-              <h3 class="card-title">Programming</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="300">
-        <a href="" class="card equal-lg-1-1 bg-white card-hover-border">
-          <div class="card-wrap">
-            <div class="card-header pb-0">
-              <span class="text-muted">22 openings</span>
-            </div>
-            <div class="card-footer mt-auto">
-              <h3 class="card-title">Design</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="400">
-        <a href="" class="card equal-lg-1-1 bg-white card-hover-border">
-          <div class="card-wrap">
-            <div class="card-header pb-0">
-              <span class="text-muted">22 openings</span>
-            </div>
-            <div class="card-footer mt-auto">
-              <h3 class="card-title">Customer Support</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-lg-4 col-xl-3" data-aos="fade-up" data-aos-delay="500">
-        <a href="" class="card equal-lg-1-1 bg-white card-hover-border">
-          <div class="card-wrap">
-            <div class="card-header pb-0">
-              <span class="text-muted">22 openings</span>
-            </div>
-            <div class="card-footer mt-auto">
-              <h3 class="card-title">Product</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-6 col-lg-8 col-xl-3" data-aos="fade-up" data-aos-delay="600">
-        <a href="" class="card equal-xl-1-1 bg-white h-100 card-hover-border">
-          <div class="card-wrap">
-            <div class="card-header pb-0">
-              <span class="text-muted">22 openings</span>
-            </div>
-            <div class="card-footer mt-auto">
-              <h3 class="card-title">Business Development</h3>
-            </div>
-          </div>
-        </a>
-      </div>
-    </div>
+    <div class="row g-1" id="feed-jobs-blocks"></div>
   </div>
 </section>
 
@@ -211,98 +126,7 @@
     </div>
     <div class="row justify-content-between">
       <div class="col">
-        <ul class="list-unstyled">
-          <li>
-            <a href="" class="card bg-white card-hover-border">
-              <div class="card-body py-4">
-                <div class="row align-items-center g-2 g-md-4 text-center text-md-start">
-                  <div class="col-md-9">
-                    <p class="fs-lg mb-0">Talonrakentajana/ Kirvesmies (Haku päättynyt)</p>
-                    <ul class="list-inline list-inline-separated text-muted">
-                      <li class="list-inline-item">1 kpl</li>
-                      <li class="list-inline-item">Forssa</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-3 text-lg-end">
-                    <span>$95k – $150k</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="mt-1">
-            <a href="" class="card bg-white card-hover-border">
-              <div class="card-body py-4">
-                <div class="row align-items-center g-2 g-md-4 text-center text-md-start">
-                  <div class="col-md-9">
-                    <p class="fs-lg mb-0">Net-sovelluskehittäjää (Haku päättynyt)</p>
-                    <ul class="list-inline list-inline-separated text-muted">
-                      <li class="list-inline-item">5 kpl</li>
-                      <li class="list-inline-item">Uusimaa</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-3 text-lg-end">
-                    <span>$95k – $150k</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="mt-1">
-            <a href="" class="card bg-white card-hover-border">
-              <div class="card-body py-4">
-                <div class="row align-items-center g-2 g-md-4 text-center text-md-start">
-                  <div class="col-md-9">
-                    <p class="fs-lg mb-0">Taloushallinnon osaaja (Haku päättynyt)</p>
-                    <ul class="list-inline list-inline-separated text-muted">
-                      <li class="list-inline-item">3 kpl</li>
-                      <li class="list-inline-item">Espoo</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-3 text-lg-end">
-                    <span>$95k – $150k</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="mt-1">
-            <a href="" class="card bg-white card-hover-border">
-              <div class="card-body py-4">
-                <div class="row align-items-center g-2 g-md-4 text-center text-md-start">
-                  <div class="col-md-9">
-                    <p class="fs-lg mb-0">Kirvesmies (Haku päättynyt)</p>
-                    <ul class="list-inline list-inline-separated text-muted">
-                      <li class="list-inline-item">2 kpl</li>
-                      <li class="list-inline-item">Hanko</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-3 text-lg-end">
-                    <span>$95k – $150k</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </li>
-          <li class="mt-1">
-            <a href="" class="card bg-white card-hover-border">
-              <div class="card-body py-4">
-                <div class="row align-items-center g-2 g-md-4 text-center text-md-start">
-                  <div class="col-md-9">
-                    <p class="fs-lg mb-0">Betonielementtien valmistaja / Forssa (Haku päättynyt)</p>
-                    <ul class="list-inline list-inline-separated text-muted">
-                      <li class="list-inline-item">3 kply</li>
-                      <li class="list-inline-item">Sastamala</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-3 text-lg-end">
-                    <span>$95k – $150k</span>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </li>
-        </ul>
+        <ul class="list-unstyled" id="feed-jobs-latest-openings"></ul>
       </div>
     </div>
   </div>
