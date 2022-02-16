@@ -64,7 +64,7 @@ const fetchJobsFeed = () => {
       try {
         const offers = JSON.parse(xml2json(doc, ' '))
         if ('list' in offers && 'advert' in offers.list) {
-          base.jobs.query = params.q || ''
+          base.jobs.query = params.query || ''
           base.jobs.feed = [...offers.list.advert].map(prepareJob)
           base.jobs.locationsFlat = base.jobs.feed.map(j => j.locations).flat()
           base.jobs.locationsUnique = [...new Set(base.jobs.locationsFlat)].sort()
@@ -79,21 +79,47 @@ const fetchJobsFeed = () => {
 };
 
 const renderScreens = () => {
-  populateSelect('jobs-locations')
+  populateHomeSearchBlock()
   populateFeedBlocks()
   populateLatestOpenings()
   populateJobListingFilter()
   populateJobListingBody()
 }
 
+const populateHomeSearchBlock = () => {
+  const select = populateSelect('jobs-locations')
+  const input = document.getElementById('jobs-home-search-input')
+  if (!input) return
+
+  const handleSearchFromHome = () => {
+    window.location.href = getSearchUrl({ query: input.value, location: select.value })
+  }
+
+  input.onkeydown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearchFromHome()
+    }
+  }
+
+  const btn = document.getElementById('jobs-home-search-button')
+  btn.onclick = handleSearchFromHome
+}
+
 const populateSelect = (target) => {
   const select = document.getElementById(target)
   if (!select) return
+
+  const optAll = document.createElement('option')
+  optAll.value = ''
+  optAll.innerHTML = 'Alue'
+  select.appendChild(optAll)
+
   for (let loc of base.jobs.locationsUnique) {
     const opt = document.createElement('option')
     opt.value = opt.innerHTML = loc
     select.appendChild(opt)
   }
+  return select
 }
 
 const populateIndex = (jobs) => {
@@ -285,7 +311,7 @@ const renderSearchBlock = () => {
       populateJobListingBody()
     }
   }
-  input.value = params.q || ''
+  input.value = params.query || ''
   divCol9.appendChild(input)
 
   btn.className = 'btn btn-primary btn-lg rounded-pill'
@@ -301,12 +327,11 @@ const renderSearchBlock = () => {
 }
 
 const handleSearchSubmit = () => {
-
   if ('URLSearchParams' in window) {
     const searchParams = new URLSearchParams(window.location.search)
     const el = document.getElementById('careers-search-input')
     if (el) {
-      searchParams.set("q", el.value)
+      searchParams.set("query", el.value)
       window.location.search = searchParams.toString()
     }
   }

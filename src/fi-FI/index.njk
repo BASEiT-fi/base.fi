@@ -8,15 +8,16 @@
         <div class="grouped-inputs p-1 rounded-pill bg-white">
           <div class="row g-0">
             <div class="col-md-3">
-              <select id="jobs-locations" class="form-select form-select-lg px-4" aria-label="Default select example">
+              <select id="jobs-locations" class="form-select form-select-lg px-4">
               </select>
             </div>
             <div class="col-md-6">
-              <input type="text" class="form-control form-control-lg px-4" aria-label="Text input with dropdown button"
-                placeholder="{{ 'Desired position' | i18n }}">
+              <input id="jobs-home-search-input" type="text" class="form-control form-control-lg px-4"
+                placeholder="{{ 'Desired position' | i18n }}" />
             </div>
             <div class="col-md-3 d-grid">
-              <a href="" class="btn btn-primary btn-lg rounded-pill">Etsiä</a>
+              <button id="jobs-home-search-button" type="button"
+                class="btn btn-primary btn-lg rounded-pill">Etsiä</button>
             </div>
           </div>
         </div>
