@@ -67,7 +67,7 @@ const renderScreens = (jobs) => {
   const flatLocations = base.jobs.feed.map(j => j.locations).flat()
   const uniqueLocations = [...new Set(flatLocations)].sort()
   populateSelect('jobs-locations', uniqueLocations)
-  populateFeedBlocks('feed-jobs-blocks', flatLocations, uniqueLocations)
+  populateFeedBlocks(flatLocations, uniqueLocations)
   populateLatestOpenings('feed-jobs-latest-openings')
   populateJobListing(flatLocations, uniqueLocations)
 }
@@ -107,8 +107,12 @@ const renderBlockInner = ([location, count], index) => {
   </a>`
 }
 
-const populateFeedBlocks = (target = '', flatLoc = [], uniqLoc = []) => {
-  const blocks = document.getElementById(target)
+const populateFeedBlocks = (flatLoc = [], uniqLoc = []) => {
+  const blocksCounter = document.getElementById('feed-jobs-blocks-counter')
+  if (blocksCounter) {
+    blocksCounter.innerText = base.jobs.feed.length
+  }
+  const blocks = document.getElementById('feed-jobs-blocks')
   if (!blocks) return
   let locByCount = []
   for (loc of uniqLoc) {
