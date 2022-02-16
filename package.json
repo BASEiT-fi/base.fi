@@ -1,6 +1,6 @@
 {
   "name": "base.fi",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "BASE Henkilöstöpalvelut",
   "main": "index.js",
   "scripts": {
