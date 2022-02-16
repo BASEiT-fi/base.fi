@@ -46,7 +46,8 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 })
 
 const getApplyUrl = (id) => base.likeit.urls.toApply + id
-const getSearchUrl = (params) => '/' + base.language + '/Työntekijöille/?' + encodeQueryData(params)
+// const getSearchUrl = (params) => '/' + base.language + '/Työntekijöille/?' + encodeQueryData(params)
+const getSearchUrl = (params) => window.location.pathname + 'Työntekijöille/?' + encodeQueryData(params)
 const prepareJob = (job) => ({ ...job, locations: job.locations ? job.locations.split(', ') : [] })
 const fetchJobsFeed = () => {
   let headers = new Headers()
@@ -185,14 +186,14 @@ const populateJobListingFilter = () => {
     if (params.location) {
       const a = document.createElement("a")
       a.className = 'btn btn-filter rounded-pill px-3 py-1'
-      a.href = '?'
+      a.href = window.location.pathname
       a.innerHTML = `<i class="bi bi-x-lg"></i>`
       locationFilter.appendChild(a)
     }
     base.jobs.locationsUnique.forEach(location => {
       const a = document.createElement("a")
       a.className = 'btn btn-filter rounded-pill px-3 py-1'
-      a.href = '?' + encodeQueryData({ location })
+      a.href = window.location.pathname + '?' + encodeQueryData({ location })
       a.innerText = location
       if (params.location && params.location === location) {
         a.classList.add('current')
