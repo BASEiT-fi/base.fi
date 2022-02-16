@@ -9,9 +9,20 @@ const base = {
   },
   jobs: {
     feed: [],
+    locationsFlat: [],
+    locationsUnique: [],
+    query: '',
     index: new FlexSearch.Document({
-      id: 'id',
-      index: ['name', 'worktitle', 'fieldofwork', 'description']
+      tokenize: "forward",
+      document: {
+        id: 'id',
+        index: [
+          'name',
+          'worktitle',
+          'fieldofwork',
+          'description'
+        ]
+      }
     })
   }
 }
@@ -52,10 +63,13 @@ const fetchJobsFeed = () => {
       try {
         const offers = JSON.parse(xml2json(doc, ' '))
         if ('list' in offers && 'advert' in offers.list) {
+          base.jobs.query = params.q || ''
           base.jobs.feed = [...offers.list.advert].map(prepareJob)
+          base.jobs.locationsFlat = base.jobs.feed.map(j => j.locations).flat()
+          base.jobs.locationsUnique = [...new Set(base.jobs.locationsFlat)].sort()
         }
         populateIndex(base.jobs.feed)
-        renderScreens(base.jobs.feed)
+        renderScreens()
       } catch (err) {
         console.error(err)
         // throw err
@@ -63,22 +77,20 @@ const fetchJobsFeed = () => {
     }).catch(reason => console.error(reason))
 };
 
-const renderScreens = (jobs) => {
-  const flatLocations = base.jobs.feed.map(j => j.locations).flat()
-  const uniqueLocations = [...new Set(flatLocations)].sort()
-  populateSelect('jobs-locations', uniqueLocations)
-  populateFeedBlocks('feed-jobs-blocks', flatLocations, uniqueLocations)
-  populateLatestOpenings('feed-jobs-latest-openings')
-  populateJobListing(flatLocations, uniqueLocations)
+const renderScreens = () => {
+  populateSelect('jobs-locations')
+  populateFeedBlocks()
+  populateLatestOpenings()
+  populateJobListingFilter()
+  populateJobListingBody()
 }
 
-const populateSelect = (target, values) => {
+const populateSelect = (target) => {
   const select = document.getElementById(target)
   if (!select) return
-  for (i in values) {
+  for (let loc of base.jobs.locationsUnique) {
     const opt = document.createElement('option')
-    opt.value = values[i]
-    opt.innerHTML = values[i]
+    opt.value = opt.innerHTML = loc
     select.appendChild(opt)
   }
 }
@@ -107,12 +119,16 @@ const renderBlockInner = ([location, count], index) => {
   </a>`
 }
 
-const populateFeedBlocks = (target = '', flatLoc = [], uniqLoc = []) => {
-  const blocks = document.getElementById(target)
+const populateFeedBlocks = () => {
+  const blocksCounter = document.getElementById('feed-jobs-blocks-counter')
+  if (blocksCounter) {
+    blocksCounter.innerText = base.jobs.feed.length
+  }
+  const blocks = document.getElementById('feed-jobs-blocks')
   if (!blocks) return
   let locByCount = []
-  for (loc of uniqLoc) {
-    locByCount.push([loc, flatLoc.filter(f => f === loc).length])
+  for (loc of base.jobs.locationsUnique) {
+    locByCount.push([loc, base.jobs.locationsFlat.filter(f => f === loc).length])
   }
   locByCount.sort((a, b) => b[1] - a[1])
   if (locByCount.length >= 7) {
@@ -135,8 +151,8 @@ const populateFeedBlocks = (target = '', flatLoc = [], uniqLoc = []) => {
   }
 }
 
-const populateLatestOpenings = (target = '') => {
-  const list = document.getElementById(target)
+const populateLatestOpenings = () => {
+  const list = document.getElementById('feed-jobs-latest-openings')
   if (!list) return
   const latestJobs = [...base.jobs.feed].sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
   for (const [i, job] of latestJobs.entries()) {
@@ -163,12 +179,7 @@ const populateLatestOpenings = (target = '') => {
   }
 }
 
-const populateJobListing = (flatLoc = [], uniqLoc = []) => {
-  const filteredJobsFeed = filterJobsByQueryParams(base.jobs.feed)
-  const countCareers = document.getElementById('careers-count')
-  if (countCareers) {
-    countCareers.innerText = filteredJobsFeed.length
-  }
+const populateJobListingFilter = () => {
   const locationFilter = document.getElementById('careers-location-filter')
   if (locationFilter) {
     if (params.location) {
@@ -178,7 +189,7 @@ const populateJobListing = (flatLoc = [], uniqLoc = []) => {
       a.innerHTML = `<i class="bi bi-x-lg"></i>`
       locationFilter.appendChild(a)
     }
-    uniqLoc.forEach(location => {
+    base.jobs.locationsUnique.forEach(location => {
       const a = document.createElement("a")
       a.className = 'btn btn-filter rounded-pill px-3 py-1'
       a.href = '?' + encodeQueryData({ location })
@@ -188,9 +199,19 @@ const populateJobListing = (flatLoc = [], uniqLoc = []) => {
       }
       locationFilter.appendChild(a)
     })
+    locationFilter.after(renderSearchBlock())
+  }
+}
+
+const populateJobListingBody = () => {
+  const filteredJobsFeed = filterJobsByQueryParams()
+  const countCareers = document.getElementById('careers-count')
+  if (countCareers) {
+    countCareers.innerText = filteredJobsFeed.length
   }
   const list = document.getElementById('likeitfi-offers')
   if (!list) return
+  list.innerHTML = ``
   filteredJobsFeed
     .sort((a, b) => new Date(b.startDate) - new Date(a.startDate))
     .forEach(job => {
@@ -234,11 +255,78 @@ const populateJobListing = (flatLoc = [], uniqLoc = []) => {
     })
 }
 
-const filterJobsByQueryParams = (jobs) => {
-  if (params.location) {
-    return jobs.filter(j => j.locations.indexOf(params.location) !== -1)
+const renderSearchBlock = () => {
+  const result = document.createElement("div")
+  const divRow = document.createElement("div")
+  const divCol9 = document.createElement("div")
+  const divCol3 = document.createElement("div")
+  const btn = document.createElement("button")
+  const input = document.createElement("input")
+
+  result.className = 'mt-3 grouped-inputs p-1 rounded-pill bg-white'
+  divRow.className = 'row g-0'
+  divCol9.className = 'col-md-9'
+  divCol3.className = 'col-md-3 d-grid'
+
+  input.id = 'careers-search-input'
+  input.type = 'text'
+  input.className = 'form-control form-control-lg px-4'
+  input.placeholder = 'Haluttu asema'
+  input.onkeydown = (e) => {
+    if (e.key === 'Enter') {
+      handleSearchSubmit()
+    }
   }
-  return base.jobs.feed
+  input.oninput = (e) => {
+    const value = e.currentTarget.value
+    if (value !== base.jobs.query) {
+      base.jobs.query = value
+      populateJobListingBody()
+    }
+  }
+  input.value = params.q || ''
+  divCol9.appendChild(input)
+
+  btn.className = 'btn btn-primary btn-lg rounded-pill'
+  btn.innerText = 'Etsiä'
+  btn.onclick = handleSearchSubmit
+  divCol3.appendChild(btn)
+
+  divRow.appendChild(divCol9)
+  divRow.appendChild(divCol3)
+
+  result.appendChild(divRow)
+  return result
+}
+
+const handleSearchSubmit = () => {
+
+  if ('URLSearchParams' in window) {
+    const searchParams = new URLSearchParams(window.location.search)
+    const el = document.getElementById('careers-search-input')
+    if (el) {
+      searchParams.set("q", el.value)
+      window.location.search = searchParams.toString()
+    }
+  }
+}
+
+const filterJobsByQueryParams = () => {
+  let result = base.jobs.feed
+  if (params.location) {
+    result = base.jobs.feed.filter(j => j.locations.indexOf(params.location) !== -1)
+  }
+  if (base.jobs.query) {
+    const search = base.jobs.index.search(base.jobs.query)
+    if (Array.isArray(search)) {
+      const ids = (search.map(s => s.result).flat()).filter(function (value, index, self) {
+        return self.indexOf(value) === index
+      })
+      // console.log('length ', ids.length, 'ids: ', ids)
+      result = [...result.filter(j => ids.indexOf(j.id) !== -1)]
+    }
+  }
+  return result
 }
 
 // on Load
