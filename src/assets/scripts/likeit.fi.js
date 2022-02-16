@@ -3,8 +3,8 @@ const base = {
   likeit: {
     urls: {
       fixture: '/assets/scripts/fixtures.xml',
-      xml: 'https://base.likeit.fi/servlet/XML?handler=duuni.Advert&state=-1&loginuser=guest&loginpass=vieras',
-      toApply: 'https://base.likeit.fi/jsp/duuni/Application.jsp?id=0&register=1&advertId='
+      xml: 'https://basefi-iwdrjih2ea-lz.a.run.app/jobs-feed',
+      toApply: 'http://base.likeit.fi/apply/'
     }
   },
   jobs: {
@@ -38,7 +38,14 @@ const getApplyUrl = (id) => base.likeit.urls.toApply + id
 const getSearchUrl = (params) => '/' + base.language + '/Työntekijöille/?' + encodeQueryData(params)
 const prepareJob = (job) => ({ ...job, locations: job.locations ? job.locations.split(', ') : [] })
 const fetchJobsFeed = () => {
-  fetch(getUrl())
+  let headers = new Headers()
+  headers.append('Content-Type', 'text/xml')
+  headers.append('Accept', 'text/xml')
+  fetch(
+    getUrl(), {
+    method: 'GET',
+    headers,
+  })
     .then(response => response.text())
     .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
     .then(doc => {
@@ -47,13 +54,13 @@ const fetchJobsFeed = () => {
         if ('list' in offers && 'advert' in offers.list) {
           base.jobs.feed = [...offers.list.advert].map(prepareJob)
         }
+        populateIndex(base.jobs.feed)
+        renderScreens(base.jobs.feed)
       } catch (err) {
         console.error(err)
-        throw err
+        // throw err
       }
-      populateIndex(base.jobs.feed)
-      renderScreens(base.jobs.feed)
-    })
+    }).catch(reason => console.error(reason))
 };
 
 const renderScreens = (jobs) => {

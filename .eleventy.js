@@ -103,20 +103,20 @@ module.exports = function (eleventyConfig) {
   // Browsersync
   // Redirect from root to default language root during --serve
   // Can also be handled by netlify.toml?
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function (err, bs) {
-        bs.addMiddleware("*", (req, res) => {
-          if (req.url === "/") {
-            res.writeHead(302, {
-              location: "/en-gb/",
-            });
-            res.end();
-          }
-        });
-      },
-    },
-  });
+  // eleventyConfig.setBrowserSyncConfig({
+  //   callbacks: {
+  //     ready: function (err, bs) {
+  //       bs.addMiddleware("*", (req, res) => {
+  //         if (req.url === "/") {
+  //           res.writeHead(302, {
+  //             location: "/en-gb/",
+  //           });
+  //           res.end();
+  //         }
+  //       });
+  //     },
+  //   },
+  // });
 
   // Base Config
   return {
