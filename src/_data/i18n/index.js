@@ -32,26 +32,32 @@ module.exports = {
   "Read more": {
     "en-GB": "Read more",
     "fi-FI": "Lue lisää",
+    "ru-RU": "Подробнее",
   },
   "Send": {
     "en-GB": "Send",
     "fi-FI": "Lähetä",
+    "ru-RU": "Отправить",
   },
   "Message": {
     "en-GB": "Message",
     "fi-FI": "Viesti",
+    "ru-RU": "Сообщение",
   },
   "Email": {
     "en-GB": "Email",
     "fi-FI": "Sähköposti",
+    "ru-RU": "Email",
   },
   "Phone": {
     "en-GB": "Phone",
     "fi-FI": "Puhelin",
+    "ru-RU": "Телефон",
   },
   "Name": {
     "en-GB": "Name",
     "fi-FI": "Nimi",
+    "ru-RU": "ФИО",
   },
   "Join us": {
     "en-GB": "Join us",
