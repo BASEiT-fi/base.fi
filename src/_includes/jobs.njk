@@ -1,0 +1,26 @@
+<article>
+  <section class="py-15 py-xl-20">
+    <div class="container mt-5 mt-xl-10">
+      <div class="row justify-content-center mb-5 mb-xl-10">
+        <div class="col-lg-8 text-center">
+          <h1 class="fw-light mb-3"><span class="fw-bold"><span id="careers-count"></span> {{ 'careers' |
+              i18n }}</span> {{ 'available right now' | i18n }}.</h1>
+          <div id="careers-location-filter">
+          </div>
+        </div>
+      </div>
+      <div class="accordion row g-1" id="likeitfi-offers"></div>
+    </div>
+  </section>
+  <div class="col-md-8 mb-5" aria-label="Country" id="likeitfi-filters"></div>
+  <div class="row justify-content-center" id="likeitfi"></div>
+  <div class="row justify-content-center collapse" id="likeitfi-message">
+    <div class="col-md-10">
+      <div class="card h-100 text-dark bg-warning">
+        <div class="card-body job-card">
+          <div class="card-text">{{ 'No offers at the moment' | i18n }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

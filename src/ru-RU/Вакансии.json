@@ -1,0 +1,11 @@
+{
+  "tags": "ru-RU",
+  "meta": {
+    "title": "Вакансии"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Вакансии",
+    "order": 300
+  }
+}

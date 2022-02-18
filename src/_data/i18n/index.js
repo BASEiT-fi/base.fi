@@ -163,4 +163,9 @@ module.exports = {
     "fi-FI": "Emme koskaan jaa sähköpostiosoitettasi kenenkään muun kanssa",
     "ru-RU": "Мы никогда не будем делиться вашей электронной почтой с кем-либо еще",
   },
+  "Interested in working together? Contact!": {
+    "en-GB": "Interested in working together? Contact!",
+    "fi-FI": "Kiinnostaako yhteistyö? Ottaa yhteyttä!",
+    "ru-RU": "Заинтересованы в совместной работе? Контакт!",
+  },
 };

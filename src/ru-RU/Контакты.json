@@ -1,0 +1,11 @@
+{
+  "tags": "ru-RU",
+  "meta": {
+    "title": "Контактная информация"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Контакты",
+    "order": 400
+  }
+}
