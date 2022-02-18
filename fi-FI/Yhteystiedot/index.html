@@ -6,8 +6,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BASE Henkilöstöpalvelut - Laadukkaita palveluita tekijöille - Yhteystiedot</title>
-  <base href="https://basefi.github.io/base.fi" /><link rel="shortcut icon" href="https://basefi.github.io/base.fi/assets/favicons/favicon.png?v1.0.7">
-<link rel="stylesheet" href="https://basefi.github.io/base.fi/assets/styles/main.css?v1.0.7">
+  <base href="https://basefi.github.io/base.fi" /><link rel="shortcut icon" href="https://basefi.github.io/base.fi/assets/favicons/favicon.png?v1.0.8">
+<link rel="stylesheet" href="https://basefi.github.io/base.fi/assets/styles/main.css?v1.0.8">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css"
   integrity="sha512-gxWow8Mo6q6pLa1XH/CcH8JyiSDEtiwJV78E+D+QP0EVasFs8wKXq16G8CLD4CJ2SnonHr4Lm/yY2fSI2+cbmw=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -71,7 +71,7 @@
       </li>
     </ul>
 
-    <div class="collapse navbar-collapse d-flex justify-content-center text-uppercase" id="navbar"
+    <div class="collapse navbar-collapse d-flex1 justify-content-center1 text-uppercase" id="navbar"
       data-bs-parent="#mainNav">
       
 
@@ -171,7 +171,46 @@
     <div id="map1" class="map"></div>
   </div>
 </section>
-
+<script>
+  function initMap() {
+    var latlng = new google.maps.LatLng(60.1669262, 24.773556);
+    var myOptions = {
+      zoom: 16,
+      center: latlng,
+      disableDefaultUI: true,
+      styles: [
+        { "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }] },
+        { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] },
+        { "elementType": "labels.text.fill", "stylers": [{ "color": "#616161" }] },
+        { "elementType": "labels.text.stroke", "stylers": [{ "color": "#f5f5f5" }] },
+        { "featureType": "administrative.land_parcel", "elementType": "labels.text.fill", "stylers": [{ "color": "#bdbdbd" }] },
+        { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#e00" }] },
+        { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] },
+        { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }] },
+        { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] },
+        { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }] },
+        { "featureType": "road.arterial", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] },
+        { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#dadada" }] },
+        { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "color": "#616161" }] },
+        { "featureType": "road.local", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] },
+        { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }] },
+        { "featureType": "transit.station", "elementType": "geometry", "stylers": [{ "color": "#0e0" }] },
+        { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#c9c9c9" }] },
+        { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] }
+      ]
+    };
+    var map = new google.maps.Map(document.getElementById("map1"), myOptions);
+    map.panBy(-100, -40);
+    var myMarker = new google.maps.Marker(
+      {
+        position: latlng,
+        map: map,
+        icon: 'https://basefi.github.io/base.fi/assets/svgs/pin.svg'
+      });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOmgh5TNyhN4h2IpRaks0CMnSi1OxvVGQ&callback=initMap" async
+  defer></script>
 <section class="py-15 py-xl-20 border-bottom">
   <div class="container">
     <div class="row mb-5">
@@ -205,12 +244,11 @@
     </div>
   </div>
 </section>
-
 <section class="py-15 py-xl-20">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-6">
-        <h2 class="fw-bold mb-6">Ota yhteyttä</h2>
+        <h2 class="fw-bold mb-6">Kiinnostaako yhteistyö? Ottaa yhteyttä!</h2>
         <form id="formContacts" name="formContacts">
           <fieldset>
             <div class="row g-3">
@@ -245,51 +283,6 @@
     </div>
   </div>
 </section>
-
-<script>
-  function initMap() {
-    var latlng = new google.maps.LatLng(60.1669262, 24.773556);
-
-    var myOptions = {
-      zoom: 16,
-      center: latlng,
-      disableDefaultUI: true,
-      styles: [
-        { "elementType": "geometry", "stylers": [{ "color": "#f5f5f5" }] },
-        { "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] },
-        { "elementType": "labels.text.fill", "stylers": [{ "color": "#616161" }] },
-        { "elementType": "labels.text.stroke", "stylers": [{ "color": "#f5f5f5" }] },
-        { "featureType": "administrative.land_parcel", "elementType": "labels.text.fill", "stylers": [{ "color": "#bdbdbd" }] },
-        { "featureType": "poi", "elementType": "geometry", "stylers": [{ "color": "#e00" }] },
-        { "featureType": "poi", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] },
-        { "featureType": "poi.park", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }] },
-        { "featureType": "poi.park", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] },
-        { "featureType": "road", "elementType": "geometry", "stylers": [{ "color": "#ffffff" }] },
-        { "featureType": "road.arterial", "elementType": "labels.text.fill", "stylers": [{ "color": "#757575" }] },
-        { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#dadada" }] },
-        { "featureType": "road.highway", "elementType": "labels.text.fill", "stylers": [{ "color": "#616161" }] },
-        { "featureType": "road.local", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] },
-        { "featureType": "transit.line", "elementType": "geometry", "stylers": [{ "color": "#e5e5e5" }] },
-        { "featureType": "transit.station", "elementType": "geometry", "stylers": [{ "color": "#0e0" }] },
-        { "featureType": "water", "elementType": "geometry", "stylers": [{ "color": "#c9c9c9" }] },
-        { "featureType": "water", "elementType": "labels.text.fill", "stylers": [{ "color": "#9e9e9e" }] }
-      ]
-    };
-
-    var map = new google.maps.Map(document.getElementById("map1"), myOptions);
-
-    map.panBy(-100, -40);
-
-    var myMarker = new google.maps.Marker(
-      {
-        position: latlng,
-        map: map,
-        icon: 'https://basefi.github.io/base.fi/assets/svgs/pin.svg'
-      });
-  }
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBOmgh5TNyhN4h2IpRaks0CMnSi1OxvVGQ&callback=initMap" async
-  defer></script>
   <section class="py-10 py-xl-15">
   <div class="container">
     <div class="carousel carousel-align text-center">
@@ -322,7 +315,7 @@
   <div class="container">
     <div class="row justify-content-between g-5 mb-5 mb-lg-10">
       <div class="col-lg-4">
-        <a href="/" class="navbar-brand"><img src="https://basefi.github.io/base.fi/assets/svgs/BASE.White.svg" alt="Logo"></a>
+        <a href="/" class="navbar-brand brand-footer"><img src="https://basefi.github.io/base.fi/assets/svgs/BASE.White.svg" alt="Logo"></a>
         <p class="mt-5 fw-light pe-lg-5 text-muted">
           Anastasia Rantala<br />
           Toimitusjohtaja<br />
@@ -399,8 +392,8 @@
 
   <script src="https://basefi.github.io/base.fi/assets/scripts/vendor.flexsearch.bundle.js"></script>
   <script src="https://basefi.github.io/base.fi/assets/scripts/xml2json.js"></script>
-  <script src="https://basefi.github.io/base.fi/assets/scripts/likeit.fi.js?v1.0.7"></script>
-  <script src="https://basefi.github.io/base.fi/assets/scripts/custom.js?v1.0.7"></script>
+  <script src="https://basefi.github.io/base.fi/assets/scripts/likeit.fi.js?v1.0.8"></script>
+  <script src="https://basefi.github.io/base.fi/assets/scripts/custom.js?v1.0.8"></script>
 </footer>
 </body>
 
