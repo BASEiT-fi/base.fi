@@ -1,21 +1,6 @@
 // @import url("https://fonts.googleapis.com/icon?family=Material+Icons+Round");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 
-.navbar {
-  .navbar-brand {
-    img {
-      max-height: 4rem;
-    }
-  }
-}
-footer {
-  .navbar-brand {
-    img {
-      max-height: 4rem;
-    }
-  }
-}
-
 .iti {
   width: 100%;
 }
@@ -37,4 +22,25 @@ footer {
   vertical-align: -0.125em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6,
+.display-7 {
+  text-transform: uppercase;
+  font-weight: 700;
+  word-wrap: break-word !important;
+  word-break: break-word !important;
+}
+
+@include media-breakpoint-down(sm) {
+  .display-1,
+  .display-2,
+  .display-3 {
+    // font-size: calc(1rem + 1vw) !important;
+  }
 }

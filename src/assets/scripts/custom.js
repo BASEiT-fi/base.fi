@@ -88,7 +88,28 @@ function disableForm(id, disable = true, reset) {
   document.querySelector('#' + id + ' fieldset').disabled = disable;
 }
 
+const listenNavBarActive = () => {
+  const e = document.querySelectorAll(".navbar")
+    , t = document.body;
+  e.forEach((function (e) {
+    e.addEventListener("hide.bs.collapse", (function () {
+      t.classList.remove("navbar-active")
+    }
+    )),
+      e.addEventListener("show.bs.collapse", (function () {
+        setTimeout((() => {
+          t.classList.add("navbar-active")
+        }
+        ), 0)
+      }
+      ))
+  }
+  ))
+}
+
 (function () {
+
+  listenNavBarActive()
 
   $(window).on("scroll", function () {
     let scroll = $(window).scrollTop();

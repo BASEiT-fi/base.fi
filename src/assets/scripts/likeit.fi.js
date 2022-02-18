@@ -27,11 +27,20 @@ const base = {
   }
 }
 
+const isLocalhost = Boolean(
+  window.location.hostname === 'localhost' ||
+  // [::1] is the IPv6 localhost address.
+  window.location.hostname === '[::1]' ||
+  // 127.0.0.1/8 is considered localhost for IPv4.
+  window.location.hostname.match(
+    /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/,
+  ),
+);
 const htmlDecode = (input) => {
   var doc = new DOMParser().parseFromString(input, "text/html")
   return doc.documentElement.textContent
 }
-const getUrl = (mockup = false) => mockup ? base.likeit.urls.fixture : new URL(base.likeit.urls.xml)
+const getUrl = (mockup = isLocalhost) => mockup ? base.likeit.urls.fixture : new URL(base.likeit.urls.xml)
 
 const encodeQueryData = (params) => {
   const ret = []
@@ -206,25 +215,32 @@ const populateLatestOpenings = () => {
   }
 }
 
+const locationElement = ({ href = '', title = '', current = false }) => {
+  const a = document.createElement("a")
+  a.className = 'btn btn-filter rounded-pill px-1 px-md-3 py-1'
+  if (current) {
+    a.classList.add('current')
+  }
+  a.href = href
+  a.innerHTML = title
+  return a
+}
+
 const populateJobListingFilter = () => {
   const locationFilter = document.getElementById('careers-location-filter')
   if (locationFilter) {
     if (params.location) {
-      const a = document.createElement("a")
-      a.className = 'btn btn-filter rounded-pill px-3 py-1'
-      a.href = window.location.pathname
-      a.innerHTML = `<i class="bi bi-x-lg"></i>`
-      locationFilter.appendChild(a)
+      locationFilter.appendChild(locationElement({
+        href: window.location.pathname,
+        title: '<i class="bi bi-x-lg"></i>'
+      }))
     }
     base.jobs.locationsUnique.forEach(location => {
-      const a = document.createElement("a")
-      a.className = 'btn btn-filter rounded-pill px-3 py-1'
-      a.href = window.location.pathname + '?' + encodeQueryData({ location })
-      a.innerText = location
-      if (params.location && params.location === location) {
-        a.classList.add('current')
-      }
-      locationFilter.appendChild(a)
+      locationFilter.appendChild(locationElement({
+        href: window.location.pathname + '?' + encodeQueryData({ location }),
+        title: location,
+        current: params.location && params.location === location
+      }))
     })
     locationFilter.after(renderSearchBlock())
   }
@@ -245,23 +261,23 @@ const populateJobListingBody = () => {
       const div = document.createElement("div")
       div.className = 'col-12'
       div.innerHTML = `<div class="accordion-item">
-        <div type="button" class="card bg-white card-hover-border"
+        <div class="card bg-white card-hover-border"
         data-bs-toggle="collapse" data-bs-target="#accordion-job-offer-${job.id}" aria-expanded="true" aria-controls="accordion-job-offer-${job.id}"
         >
           <div class="card-body">
             <div class="row align-items-center g-2 g-md-4 text-center text-md-start">
-              <div class="col-md-2 d-flex align-items-center">
+              <div type="button" class="col-md-2 d-flex align-items-center">
               <i class="bi bi-clock me-1 fs-5 text-muted"></i>  
               ${job.molworkdurationcat || ''}
               </div>
-              <div class="col-md-6">
+              <div type="button" class="col-md-6">
                 <p class="fs-lg mb-0">${job.name}</p>
                 <ul class="list-inline list-inline-separated text-muted">
                 <li class="list-inline-item">${job.fieldofwork ? job.fieldofwork.split('/').map(f => f.trim()).join(', ') : ''}</li>
                 <li class="list-inline-item">${job.locations.join(', ')}<i class="bi bi-geo ms-1 text-muted"></i></li>
                 </ul>
               </div>
-              <div class="col-md-2 d-flex align-items-center justify-content-center">
+              <div type="button" class="col-md-2 d-flex align-items-center justify-content-center">
                 <i class="bi bi-person me-1 fs-5 text-muted"></i>  
                 ${job.numberofperson ? job.numberofperson + ' kpl' : ''}
               </div>

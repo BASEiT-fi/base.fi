@@ -31,6 +31,9 @@
 .headroom--open {
   .navbar-sticky {
     padding: rem(16) 0;
+    @include media-breakpoint-down(sm) {
+      padding: rem(5) 0;
+    }
 
     &.navbar-dark {
       background: $dark;
@@ -127,9 +130,23 @@
 .navbar-brand {
   img {
     width: auto;
-    max-height: rem(40);
+    max-height: rem(60);
+    @include media-breakpoint-down(md) {
+      max-height: rem(50);
+    }
+    @include media-breakpoint-down(sm) {
+      max-height: rem(36);
+    }
   }
-
+  &.brand-footer {
+    img {
+      width: auto;
+      max-height: rem(60);
+      @include media-breakpoint-down(sm) {
+        max-height: rem(50);
+      }
+    }
+  }
   @include media-breakpoint-down(sm) {
     margin: 0;
   }
