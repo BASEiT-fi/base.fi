@@ -1,0 +1,11 @@
+{
+  "tags": "en-GB",
+  "meta": {
+    "title": "For job-seekers"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "For-job-seekers",
+    "order": 300
+  }
+}

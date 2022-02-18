@@ -1,0 +1,48 @@
+<section class="py-15 bg-black overflow-hidden" data-aos="fade-in">
+  <div class="d-flex flex-column py-5 min-vh-100 container foreground">
+    <div class="row justify-content-center my-auto pb-5">
+      <div class="col-lg-6 text-center mb-5">
+        <h1 class="display-2 fw-bold text-white">{{ 'Find your dream job with us' | i18n }}</h1>
+      </div>
+      <div class="col-lg-8">
+        <div class="grouped-inputs p-1 rounded-pill bg-white">
+          <div class="row g-0">
+            <div class="col-md-3">
+              <select id="jobs-locations" class="form-select form-select-lg px-4">
+              </select>
+            </div>
+            <div class="col-md-6">
+              <input id="jobs-home-search-input" type="text" class="form-control form-control-lg px-4"
+                placeholder="{{ 'Desired position' | i18n }}" />
+            </div>
+            <div class="col-md-3 d-grid">
+              <button id="jobs-home-search-button" type="button" class="btn btn-primary btn-lg rounded-pill">{{ 'Search'
+                | i18n }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center inverted">
+      <div class="col-lg-8 text-center">
+        <span class="text-muted">{{ 'Trusted by' | i18n }}</span>
+        <div class="carousel carousel-align text-center mt-4">
+          <div class="carousel-data d-flex align-items-center">
+            <div>
+              <img src="{{site.url}}/assets/svgs/kestobetoni.white.svg" alt="Logo" class="logo">
+            </div>
+            <div>
+              <img src="{{site.url}}/assets/svgs/betset.white.svg" alt="Logo" class="logo">
+            </div>
+            <div>
+              <img src="{{site.url}}/assets/svgs/kovabetoni.white.svg" alt="Logo" class="logo">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <figure class="background background-overlay filter-maven"
+    style="background-image: url('{{site.url}}/assets/images/worker.1280.jpg')"
+    data-top-top="transform: translateY(0%);" data-top-bottom="transform: translateY(10%);"></figure>
+</section>

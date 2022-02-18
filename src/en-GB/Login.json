@@ -1,0 +1,12 @@
+{
+  "tags": "en-GB",
+  "meta": {
+    "title": "Login"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "url": "https://base.likeit.fi/jsp/Login.jsp",
+    "key": "Login",
+    "order": 500
+  }
+}

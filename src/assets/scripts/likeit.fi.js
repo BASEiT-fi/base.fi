@@ -120,7 +120,7 @@ const populateSelect = (target) => {
 
   const optAll = document.createElement('option')
   optAll.value = ''
-  optAll.innerHTML = 'Alue'
+  optAll.innerHTML = ' - Alueella - '
   select.appendChild(optAll)
 
   for (let loc of base.jobs.locationsUnique) {

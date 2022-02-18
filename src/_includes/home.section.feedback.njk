@@ -1,0 +1,27 @@
+<section class="bg-primary mx-xl-3 py-15 py-xl-20 inverted overflow-hidden">
+  <div class="container level-1">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-6 text-center">
+        <h2 class="fw-light mb-5"><span class="fw-bold">{{ "Subscribe" | i18n }}</span>
+          {{ "and get latest entries right to your inbox" | i18n }}.
+        </h2>
+        <div class="grouped-inputs p-1 border rounded-pill mb-2">
+          <div class="row g-1">
+            <div class="col-lg-9">
+              <input type="text" class="form-control px-4 rounded-pill"
+                placeholder="{{ 'Your email address' | i18n }}" />
+            </div>
+            <div class="col-lg-3 d-grid">
+              <a href="" class="btn btn-white rounded-pill">{{ "Subscribe" | i18n }}</a>
+            </div>
+          </div>
+        </div>
+        <small class="text-muted">{{ "We'll never share your email with anyone else" | i18n }}.</small>
+      </div>
+    </div>
+  </div>
+  <figure class="background background-overlay background-parallax"
+    style="background-image: url('{{site.url}}/assets/images/keyboard.1280.jpg')"
+    data-bottom-top="transform: translateY(0%);" data-top-bottom="transform: translateY(20%);">
+  </figure>
+</section>

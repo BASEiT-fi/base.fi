@@ -1,0 +1,11 @@
+{
+  "tags": "en-GB",
+  "meta": {
+    "title": "Contact us"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Contact-us",
+    "order": 400
+  }
+}

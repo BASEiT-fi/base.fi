@@ -1,0 +1,116 @@
+<section class="cover overflow-hidden bg-black inverted">
+  <div class="d-flex flex-column py-20 min-vh-100 container foreground">
+    <div class="row mt-auto">
+      <div class="col-md-8">
+        <h2 class="fw-bold display-2">For us, it requires expertise, commitment, collaboration, creativity and
+          reliability</h2>
+        {# <a href="" class="btn btn-white rounded-pill">{{ 'Read more' | i18n }}</a> #}
+      </div>
+    </div>
+  </div>
+  <div class="background background-overlay text-black" data-aos="zoom-out" data-aos-delay="200">
+    <video playsinline autoplay muted loop data-video id="player">
+      <!-- Video by cottonbro from Pexels -->
+      <source src="{{site.url}}/assets/videos/recruitment.mp4" type="video/mp4">
+    </video>
+  </div>
+  <span class="scroll-down"></span>
+</section>
+
+<section class="py-15 py-xl-20 bg-light">
+  <div class="container">
+    <div class="row mb-10">
+      <div class="col-md-3 mb-3 mb-md-0">
+        <h2 class="fw-bold">Industries</h2>
+      </div>
+      <div class="col-md-9">
+        <p class="lead">
+          Our industry knowledge covers such industries as construction, logistics and property maintenance.
+        </p>
+        <p class="lead">
+          All our clients have the benefit of our detailed industry knowledge within the construction sector. With a
+          pool of applicants, we support our clients with employees who have the skills needed to get the job done right
+          – ranging from general labor to skilled machine operators.
+        </p>
+        <p class="lead">
+          We know the challenges associated with construction projects: time, skill, budget and delivery. That inside
+          information enabled us to streamline the process and deliver exactly what our clients need — working within
+          budget to deliver skilled specialists as quickly as possible.
+        </p>
+        <p class="lead">
+          For job seekers, Base is committed to being the best employer in the industry for construction workers. We
+          offer our employees the security of permanent and temporary employment and a diversified work experience
+          through our many and varied clients.
+        </p>
+        <p class="lead">
+          We want to be a long-term partner for both the employer and the employee – throughout our careers.
+        </p>
+        <p class="lead">
+          Let’s grow business and develop careers together.
+        </p>
+      </div>
+    </div>
+    <div class="row g-3 g-xl-5 justify-content-between">
+      <div class="col-xl-4">
+        <ul class="nav nav-tabs flex-xl-column" id="component-1" role="tablist">
+          <li class="nav-item">
+            <button class="nav-link fs-5 active" id="component-1-1-tab" data-bs-toggle="pill"
+              data-bs-target="#component-1-1" type="button" role="tab" aria-controls="component-1-1"
+              aria-selected="false">Property maintenance</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link fs-5" id="component-1-2-tab" data-bs-toggle="pill" data-bs-target="#component-1-2"
+              type="button" role="tab" aria-controls="component-1-2" aria-selected="false">Logistics</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link fs-5" id="component-1-3-tab" data-bs-toggle="pill" data-bs-target="#component-1-3"
+              type="button" role="tab" aria-controls="component-1-3" aria-selected="false">Construction</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link fs-5" id="component-1-4-tab" data-bs-toggle="pill" data-bs-target="#component-1-4"
+              type="button" role="tab" aria-controls="component-1-4" aria-selected="true">Manufacturing</button>
+          </li>
+        </ul>
+      </div>
+      <div class="col-xl-8">
+        <div class="tab-content fs-lg" id="component-1-content">
+          <div class="tab-pane fade active show" id="component-1-1" role="tabpanel" aria-labelledby="component-1-1-tab">
+            <h5>Property maintenance</h5>
+            <p>From Base, you can reliably and quickly find the right resources for different tasks in property
+              maintenance.</p>
+            <p>We handle the recruitment process with professionalism, from finding the right factor to managing the
+              employment relationship. The employee works flexibly on the job site, according to the needs and operating
+              model of your company.</p>
+            <p>Use the form to tell us about your labor needs and we will contact you.</p>
+          </div>
+          <div class="tab-pane fade" id="component-1-2" role="tabpanel" aria-labelledby="component-1-2-tab">
+            <h5>Logistics</h5>
+            <p>From Base, you can reliably and quickly find the right resources for different tasks in logistics.</p>
+            <p>We handle the recruitment process with professionalism, from finding the right factor to managing the
+              employment relationship. The employee works flexibly on the job site, according to the needs and operating
+              model of your company.</p>
+            <p>Use the form to tell us about your labor needs and we will contact you.</p>
+          </div>
+          <div class="tab-pane fade" id="component-1-3" role="tabpanel" aria-labelledby="component-1-3-tab">
+            <h5>Construction</h5>
+            <p>From Base, you can reliably and quickly find the right resources for different tasks in construction,
+              from auxiliary workers to strong professionals.</p>
+            <p>We handle the recruitment process with professionalism, from finding the right factor to managing the
+              employment relationship. The employee works flexibly on the job site, according to the needs and operating
+              model of your company.</p>
+            <p>Use the form to tell us about your labor needs and we will contact you.</p>
+          </div>
+          <div class="tab-pane fade" id="component-1-4" role="tabpanel" aria-labelledby="component-1-4-tab">
+            <h5>Manufacturing</h5>
+            <p>Base is a strong partner in human resources for industrial manufacturing.</p>
+            <p>Through us, you will find staff for all industries. Our biggest employers are power plants, clients from
+              the engineering industry, the food industry, the electronics industry, and paper processing. We understand
+              the rapidly changing needs of the industry and respond quickly to changes in resource needs.</p>
+            <p>A person recruited by Base can work on a tenancy basis or work directly for a client company.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include "form.contacts.njk" %}

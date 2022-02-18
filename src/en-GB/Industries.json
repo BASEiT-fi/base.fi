@@ -1,0 +1,11 @@
+{
+  "tags": "en-GB",
+  "meta": {
+    "title": "Industries"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Industries",
+    "order": 100
+  }
+}
