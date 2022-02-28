@@ -1,0 +1,11 @@
+{
+  "tags": "ru-RU",
+  "meta": {
+    "title": "Помощь"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "key": "Помощь",
+    "order": 500
+  }
+}

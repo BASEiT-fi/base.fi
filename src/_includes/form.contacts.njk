@@ -1,29 +1,28 @@
-<section class="py-15 py-xl-20">
-  <div class="container">
+<section class="bg-primary mx-xl-3 py-15 py-xl-20 inverted overflow-hidden">
+  <div class="container level-1">
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-6">
         <h2 class="fw-bold mb-6">{{ 'Interested in working together? Contact!' | i18n }}</h2>
         <form id="formContacts" name="formContacts">
           <fieldset>
             <div class="row g-3">
-
               <div class="col-md-6">
-                <label for="yourName" class="form-label">{{ 'Name' | i18n }}</label>
-                <input type="text" class="form-control" id="yourName" placeholder="{{ 'Name' | i18n }}">
+                <!-- <label for="yourName" class="form-label">{{ 'Name' | i18n }}</label> -->
+                <input type="text" class="form-control rounded" id="yourName" placeholder="{{ 'Name' | i18n }}">
               </div>
               <div class="col-md-6">
-                <label for="yourEmail" class="form-label">{{ 'Email' | i18n }}</label>
-                <input type="text" class="form-control" id="yourEmail" placeholder="{{ 'Email' | i18n }}">
+                <!-- <label for="yourEmail" class="form-label">{{ 'Email' | i18n }}</label> -->
+                <input type="text" class="form-control rounded" id="yourEmail" placeholder="{{ 'Email' | i18n }}">
               </div>
               <div class="col-md-12">
-                <label for="yourPhone" class="form-label">{{ 'Phone' | i18n }}</label>
+                <!-- <label for="yourPhone" class="form-label">{{ 'Phone' | i18n }}</label> -->
                 <div class="input-group">
-                  <input type="text" class="form-control" id="yourPhone" placeholder="{{ 'Phone' | i18n }}">
+                  <input type="text" class="form-control rounded" id="yourPhone" placeholder="{{ 'Phone' | i18n }}">
                 </div>
               </div>
               <div class="col-md-12">
-                <label for="yourMessage" class="form-label">{{ 'Message' | i18n }}</label>
-                <textarea class="form-control" id="yourMessage" rows="3"
+                <!-- <label for="yourMessage" class="form-label">{{ 'Message' | i18n }}</label> -->
+                <textarea class="form-control rounded" id="yourMessage" rows="3"
                   placeholder="{{ 'Message' | i18n }}"></textarea>
               </div>
               <div class="col-md-8 mt-4">
@@ -36,4 +35,9 @@
       </div>
     </div>
   </div>
+  <figure class="background background-overlay background-parallax"
+    style="background-image: url('{{site.url}}/assets/images/keyboard.1280.jpg')"
+    data-bottom-top="transform: translateY(0%);" data-top-bottom="transform: translateY(20%);">
+  </figure>
+
 </section>

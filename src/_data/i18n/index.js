@@ -174,4 +174,9 @@ module.exports = {
     "fi-FI": "Kiinnostaako yhteistyö? Ottaa yhteyttä!",
     "ru-RU": "Заинтересованы в совместной работе? Контакт!",
   },
+  "Login": {
+    "en-GB": "Login",
+    "fi-FI": "Kirjaudu",
+    "ru-RU": "Войти",
+  }
 };

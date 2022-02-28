@@ -1,0 +1,14 @@
+{
+  "tags": "ru-RU",
+  "meta": {
+    "title": "Опубликованы брошюры Kela на английском, русском и эстонском языке"
+  },
+  "layout": "base",
+  "eleventyNavigation": {
+    "parent": "Помощь",
+    "key": "Kela выпустила брошюры о пособиях образца 2021",
+    "order": 1,
+    "published": "2021-04-29T10:57:31.284Z",
+    "image": "/assets/images/help/allowance.png"
+  }
+}

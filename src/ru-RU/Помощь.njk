@@ -1,0 +1,31 @@
+{% include "headroom.open.njk" %}
+<section class="py-15 py-xl-20">
+  <div class="container mt-5 mt-xl-10">
+    <h1 class="mb-1">{{meta.title}}</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{site.url}}/{{locale}}/">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{meta.title}}</li>
+        {# <li class="breadcrumb-item"><a href="{{page.url}}">Помощь</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Помощь</li> #}
+      </ol>
+    </nav>
+    <div class="row g-4 g-xl-5 justify-content-between mt-5">
+      {%- for item in collections[locale] | eleventyNavigation("Помощь") -%}
+      <div class="col-md-6 col-lg-{% if loop.index % 2 == 0 %}5{% else %}7{% endif %}">
+        <article class="card hover-arrow">
+          <a href="{{site.url}}{{ item.url | url }}"><img src="{{site.url}}{{item.image}}" class="card-img-top"
+              alt="Image"></a>
+          <div class="card-body p-0 pe-lg-10 mt-2">
+            <a href="{{site.url}}{{ item.url | url }}" class="card-title">
+              <h5>{{item.title}}</h5>
+            </a>
+            <time title="{{item.published}}" datetime="{{item.published}}"
+              class="dayjs eyebrow text-muted">{{item.published}}</time>
+          </div>
+        </article>
+      </div>
+      {% endfor -%}
+    </div>
+  </div>
+</section>
