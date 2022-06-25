@@ -3,6 +3,7 @@ const base = {
   likeit: {
     urls: {
       fixture: '/assets/scripts/fixtures.xml',
+      latest: '/assets/scripts/2022.06.25.xml',
       xml: 'https://basefi-iwdrjih2ea-lz.a.run.app/jobs-feed',
       toApply: 'http://base.likeit.fi/apply/'
     }
@@ -40,7 +41,7 @@ const htmlDecode = (input) => {
   var doc = new DOMParser().parseFromString(input, "text/html")
   return doc.documentElement.textContent
 }
-const getUrl = (mockup = isLocalhost) => mockup ? base.likeit.urls.fixture : new URL(base.likeit.urls.xml)
+const getUrl = (mockup = isLocalhost) => mockup ? base.likeit.urls.latest : base.likeit.urls.latest // new URL(base.likeit.urls.xml)
 
 const encodeQueryData = (params) => {
   const ret = []

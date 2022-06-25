@@ -1,18 +1,29 @@
-## Usage
+Home screen
+ - добавить еще какой-то лозунг
+ - фильтр по индустрии в блоках
+ - блоки либо с цветами поработать либо убрать либо картинки на фоне
+ + убрать блок с подпиской на вакансии
+ + убрать блок с двумя ссылками большими
+ + лого патрнеров в футер
+ - в блоках вакансий попробовать задний фон!!!
 
-**Install via:**
+Toimialat
++ видео фон подобрать соответствующий base
+- убрать сферы
+- добавить иконки/картинки с наименованием сфер
 
-- `npm install`
 
-**Start local development with**
+Форма form.contacts.njk
+ + сделать наподобии формы подписки на вакансии
 
-- `npm start`
+Palvelut-asiakkaille
+ + Ulkoistaminen -> suorarekrytointi в разделе с текстом: Basen suorarekrytointi on helppo ja nopea keino löytää
 
-**Where to edit?**
+Työntekijöille:
+ - фильтр по индустрии в блоках
 
-- Work with files in `src/`-folder
-- **Don't** edit `_site/` folder (automatically generated)
+Menu:
++ Кнопку KIRJAUDU перенести вправо вместо Join us
 
-**Generate a static build with**
-
-- `npm run build`
+Contacts form
+- upload CV
