@@ -3,7 +3,7 @@ const base = {
   likeit: {
     urls: {
       fixture: '/assets/scripts/fixtures.xml',
-      latest: '/assets/scripts/2022.06.25.xml',
+      latest: (typeof siteUrl !== 'undefined' ? siteUrl : '') + '/assets/scripts/2022.06.25.xml',
       xml: 'https://basefi-iwdrjih2ea-lz.a.run.app/jobs-feed',
       toApply: 'http://base.likeit.fi/apply/'
     }
