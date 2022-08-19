@@ -396,31 +396,41 @@
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-6">
         <h2 class="fw-bold mb-6">Kiinnostaako yhteistyö? Ottaa yhteyttä!</h2>
-        <form id="formContacts" name="formContacts">
+        <form id="form-contacts" name="form-contacts" action="https://getform.io/f/0e5f6806-9592-4779-91f2-dbfe541c95f8"
+          method="POST" enctype="multipart/form-data">
           <fieldset>
             <div class="row g-3">
               <div class="col-md-6">
                 <!-- <label for="yourName" class="form-label">Nimi</label> -->
-                <input type="text" class="form-control rounded" id="yourName" placeholder="Nimi">
+                <input type="text" class="form-control rounded" name="name" id="yourName"
+                  placeholder="Nimi">
               </div>
               <div class="col-md-6">
                 <!-- <label for="yourEmail" class="form-label">Sähköposti</label> -->
-                <input type="text" class="form-control rounded" id="yourEmail" placeholder="Sähköposti">
+                <input type="text" class="form-control rounded" name="email" id="yourEmail"
+                  placeholder="Sähköposti">
               </div>
               <div class="col-md-12">
                 <!-- <label for="yourPhone" class="form-label">Puhelin</label> -->
                 <div class="input-group">
-                  <input type="text" class="form-control rounded" id="yourPhone" placeholder="Puhelin">
+                  <input type="text" class="form-control rounded" name="phone" id="yourPhone"
+                    placeholder="Puhelin">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="input-group">
+                  <input type="file" class="form-control rounded" name="file" id="yourFile"
+                    placeholder="File">
                 </div>
               </div>
               <div class="col-md-12">
                 <!-- <label for="yourMessage" class="form-label">Viesti</label> -->
-                <textarea class="form-control rounded" id="yourMessage" rows="3"
+                <textarea class="form-control rounded" id="yourMessage" name="message" rows="3"
                   placeholder="Viesti"></textarea>
               </div>
               <div class="col-md-8 mt-4">
-                <a href="" class="btn btn-lg btn-primary btn-with-icon rounded-pill">Lähetä<i
-                    class="bi bi-arrow-right"></i></a>
+                <button type="submit" class="btn btn-lg btn-primary btn-with-icon rounded-pill">Lähetä<i class="bi bi-arrow-right"></i></button>
+
               </div>
             </div>
           </fieldset>
@@ -513,7 +523,8 @@
           <div class="col-6 col-md-4">
             <span class="eyebrow text-muted mb-1 d-flex">Some</span>
             <ul class="list-unstyled">
-              <li class="mb-1"><a href="" class="text-reset text-primary-hover">Tietosuojaseloste</a></li>
+              <li class="mb-1"><a target="_blank" href="https://basefi.github.io/base.fi/assets/docs/Tietosuojaseloste.pdf?1"
+                  class="text-reset text-primary-hover">Tietosuojaseloste</a></li>
               <li class="mb-1"><a href="" class="text-reset text-primary-hover">Lataa esitteemme</a></li>
               <!-- <li class="mb-1"><a href="" class="text-reset text-primary-hover">Liity Kumppaniksi</a></li> -->
             </ul>
