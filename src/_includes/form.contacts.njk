@@ -3,31 +3,42 @@
     <div class="row justify-content-center">
       <div class="col-lg-8 col-xl-6">
         <h2 class="fw-bold mb-6">{{ 'Interested in working together? Contact!' | i18n }}</h2>
-        <form id="formContacts" name="formContacts">
+        <form id="form-contacts" name="form-contacts" action="https://getform.io/f/0e5f6806-9592-4779-91f2-dbfe541c95f8"
+          method="POST" enctype="multipart/form-data">
           <fieldset>
             <div class="row g-3">
               <div class="col-md-6">
                 <!-- <label for="yourName" class="form-label">{{ 'Name' | i18n }}</label> -->
-                <input type="text" class="form-control rounded" id="yourName" placeholder="{{ 'Name' | i18n }}">
+                <input type="text" class="form-control rounded" name="name" id="yourName"
+                  placeholder="{{ 'Name' | i18n }}">
               </div>
               <div class="col-md-6">
                 <!-- <label for="yourEmail" class="form-label">{{ 'Email' | i18n }}</label> -->
-                <input type="text" class="form-control rounded" id="yourEmail" placeholder="{{ 'Email' | i18n }}">
+                <input type="text" class="form-control rounded" name="email" id="yourEmail"
+                  placeholder="{{ 'Email' | i18n }}">
               </div>
               <div class="col-md-12">
                 <!-- <label for="yourPhone" class="form-label">{{ 'Phone' | i18n }}</label> -->
                 <div class="input-group">
-                  <input type="text" class="form-control rounded" id="yourPhone" placeholder="{{ 'Phone' | i18n }}">
+                  <input type="text" class="form-control rounded" name="phone" id="yourPhone"
+                    placeholder="{{ 'Phone' | i18n }}">
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="input-group">
+                  <input type="file" class="form-control rounded" name="file" id="yourFile"
+                    placeholder="{{ 'File' | i18n }}">
                 </div>
               </div>
               <div class="col-md-12">
                 <!-- <label for="yourMessage" class="form-label">{{ 'Message' | i18n }}</label> -->
-                <textarea class="form-control rounded" id="yourMessage" rows="3"
+                <textarea class="form-control rounded" id="yourMessage" name="message" rows="3"
                   placeholder="{{ 'Message' | i18n }}"></textarea>
               </div>
               <div class="col-md-8 mt-4">
-                <a href="" class="btn btn-lg btn-primary btn-with-icon rounded-pill">{{ 'Send' | i18n }}<i
-                    class="bi bi-arrow-right"></i></a>
+                <button type="submit" class="btn btn-lg btn-primary btn-with-icon rounded-pill">{{ 'Send' | i18n
+                  }}<i class="bi bi-arrow-right"></i></button>
+
               </div>
             </div>
           </fieldset>
