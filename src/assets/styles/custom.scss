@@ -58,3 +58,8 @@ a:not([href]):not([class]):hover {
   color: var(--bs-primary);
   text-decoration: none;
 }
+
+
+.biggest-button.fs-3 {
+  font-size: calc(1.3rem + 0.25vw) !important;
+}
