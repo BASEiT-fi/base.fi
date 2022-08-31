@@ -15,7 +15,7 @@ if ($(".carousel-data").length) {
     responsive: {
       0: { items: 2 },
       768: { items: 3 },
-      1200: { items: 3 },
+      1200: { items: 4 },
     }
   });
 }
@@ -29,7 +29,7 @@ if ($(".carousel-logos-footer").length) {
     responsive: {
       0: { items: 2 },
       768: { items: 3 },
-      1200: { items: 3 },
+      1200: { items: 4 },
     },
   })
 }
