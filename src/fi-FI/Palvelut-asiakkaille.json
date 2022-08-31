@@ -6,6 +6,8 @@
   "layout": "base",
   "eleventyNavigation": {
     "key": "Palvelut-asiakkaille",
-    "order": 200
+    "order": 200,
+    "isOneOfBigButton": true,
+    "isLeft": true
   }
 }

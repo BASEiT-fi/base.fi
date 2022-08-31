@@ -6,6 +6,8 @@
   "layout": "base",
   "eleventyNavigation": {
     "key": "Työntekijöille",
-    "order": 300
+    "order": 300,
+    "isOneOfBigButton": true,
+    "isRight": true
   }
 }

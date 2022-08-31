@@ -64,7 +64,8 @@ figure {
       bottom: 0;
       left: 0;
       content: "";
-      background: $dark;
+      // background: $dark;
+      background: $white;
       // background: radial-gradient(circle closest-corner, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
     }
   }

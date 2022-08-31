@@ -1,6 +1,65 @@
-{% include "home.section.top.njk" %}
-{% include "job.blocks.njk" %}
-{#% include "home.section.blog.njk" %#}
-{% include "latest.openings.njk" %}
-{#% include "home.section.feedback.njk" %#}
-{#% include "home.section.bottom.njk" %#}
+<section class="py-15 bg-black1 overflow-hidden" data-aos="fade-in">
+  <div class="d-flex flex-column py-20 min-vh-100 container foreground">
+    <div class="row mt-auto justify-content-end">
+      <div class="col-md-8">
+        <h2 class="fw-bold display-2 text-black pb-5 text-end">Henkilöstövuokrauksessa me hoidamme rekrytointiprosessin
+          ammattitaidolla</h2>
+      </div>
+    </div>
+  </div>
+  <figure class="background background-overlay filter-maven1"
+    style="background-image: url('{{site.url}}/assets/images/worker.1280.jpg')"
+    data-top-top="transform: translateY(0%);" data-top-bottom="transform: translateY(10%);"></figure>
+</section>
+
+{#
+<section class="cover overflow-hidden bg-black inverted">
+  <div class="d-flex flex-column py-20 min-vh-100 container foreground">
+    <div class="row mt-auto">
+      <div class="col-md-8">
+        <h2 class="fw-bold display-2">Henkilöstövuokrauksessa me hoidamme rekrytointiprosessin ammattitaidolla</h2>
+      </div>
+    </div>
+  </div>
+  <div class="background background-overlay text-black" data-aos="zoom-out" data-aos-delay="200">
+    <video playsinline autoplay muted loop data-video id="player">
+      <!-- Video by cottonbro from Pexels -->
+      <source src="{{site.url}}/assets/videos/industrial.mp4" type="video/mp4">
+    </video>
+  </div>
+  <span class="scroll-down"></span>
+</section>
+#}
+
+<section class="py-15 py-xl-20 bg-light">
+  <div class="container">
+    <div class="row mb-10">
+      <div class="col-md-3 mb-3 mb-md-0">
+        <h2 class="fw-bold">Toimialat</h2>
+      </div>
+      <div class="col-md-9">
+        <!-- <p class="lead">
+          Monivuotinen toimialatuntemuksemme kattaa rakennusalan, teollisuuden, logistiikan sekä kiinteistöhuollon.
+        </p>
+        <p class="lead">
+          Tiedämme, että pystymme tuottamaan organisaatioille laajaa ja merkittävää lisäarvoa näiden toimialojen
+          HR-asioiden osalta.
+        </p>
+        <p class="lead">
+          On tärkeää huomioida, että verkostomme on myös kansainvälinen.
+        </p> -->
+        <p class="lead">Monivuotinen toimialatuntemuksemme kattaa <b>rakennusalan, teollisuuden, logistiikan sekä
+            kiinteistöhuollon</b>. Tiedämme, että pystymme tuottamaan organisaatioille laajaa ja merkittävää lisäarvoa
+          näiden
+          toimialojen HR-asioiden osalta. On tärkeää huomioida, että verkostomme on myös kansainvälinen.</p>
+        <p class="lead">Palava halumme on palvella sekä auttaa niin työnantajia kuin työntekijöitä. Kun osapuolet
+          menestyvät, menestymme myös me.</p>
+        <p class="lead">Kasvatetaan liiketoimintaa ja työuria yhdessä.</p>
+      </div>
+    </div>
+    <div class="row g-3 g-xl-5 justify-content-between">
+      {% include "home.two.big.buttons.njk" %}
+    </div>
+  </div>
+</section>
+{% include "form.contacts.njk" %}

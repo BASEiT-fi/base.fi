@@ -1,10 +1,24 @@
-<section class="cover overflow-hidden bg-black1 inverted1">
+<section class="py-15 bg-black1 overflow-hidden" data-aos="fade-in">
+  <div class="d-flex flex-column py-20 min-vh-100 container foreground">
+    <div class="row mt-auto justify-content-end">
+      <div class="col-md-8">
+        <h2 class="fw-bold display-2 text-black pb-5 text-end">For us, it requires expertise, commitment, collaboration,
+          creativity and reliability</h2>
+      </div>
+    </div>
+  </div>
+  <figure class="background background-overlay filter-maven1"
+    style="background-image: url('{{site.url}}/assets/images/worker.1280.jpg')"
+    data-top-top="transform: translateY(0%);" data-top-bottom="transform: translateY(10%);"></figure>
+</section>
+
+{#
+<section class="cover overflow-hidden bg-black inverted">
   <div class="d-flex flex-column py-20 min-vh-100 container foreground">
     <div class="row mt-auto">
       <div class="col-md-8">
         <h2 class="fw-bold display-2">For us, it requires expertise, commitment, collaboration, creativity and
           reliability</h2>
-        {# <a href="" class="btn btn-white rounded-pill">{{ 'Read more' | i18n }}</a> #}
       </div>
     </div>
   </div>
@@ -16,6 +30,7 @@
   </div>
   <span class="scroll-down"></span>
 </section>
+#}
 
 <section class="py-15 py-xl-20 bg-light">
   <div class="container">
@@ -51,6 +66,9 @@
       </div>
     </div>
     <div class="row g-3 g-xl-5 justify-content-between">
+      {% include "home.two.big.buttons.njk" %}
+    </div>
+    <!-- <div class="row g-3 g-xl-5 justify-content-between">
       <div class="col-xl-4">
         <ul class="nav nav-tabs flex-xl-column" id="component-1" role="tablist">
           <li class="nav-item">
@@ -110,7 +128,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </section>
 {% include "form.contacts.njk" %}

@@ -6,6 +6,7 @@
   "layout": "base",
   "eleventyNavigation": {
     "key": "Вакансии",
-    "order": 300
+    "order": 300,
+    "isBigButton": true
   }
 }

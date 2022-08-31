@@ -11,8 +11,8 @@
   {%- for item in collections[locale] | eleventyNavigation -%}{{ renderNavList(item) }}
   {% endfor -%}
   {% include "languages.njk" %}
-  <li class="nav-item d-lg-none">
+  <!-- <li class="nav-item d-lg-none">
     <a href="https://base.likeit.fi/jsp/Login.jsp" class="nav-link text-primary" target="_blank">{{ 'Login' | i18n
       }}</a>
-  </li>
+  </li> -->
 </ul>

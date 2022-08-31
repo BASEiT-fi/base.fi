@@ -6,6 +6,7 @@
   "layout": "base",
   "eleventyNavigation": {
     "key": "For Clients",
-    "order": 200
+    "order": 200,
+    "isBigButton": true
   }
 }

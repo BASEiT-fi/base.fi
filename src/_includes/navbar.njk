@@ -1,9 +1,11 @@
-<nav id="mainNav" class="navbar navbar-expand-lg navbar-sticky navbar-dark">
+<!-- <nav id="mainNav" class="navbar navbar-expand-lg navbar-sticky navbar-dark"> -->
+<nav id="mainNav" class="navbar navbar-expand-lg navbar-sticky navbar-light">
   <div class="container">
     <a href="{{site.url}}{{ '/' + locale + '/' | url }}" class="navbar-brand me-3">
       <!-- <img src="{{site.url}}/assets/svgs/BASE.White.svg" alt="BASE.fi" class="d-none" id="logo-white" /> -->
       <!-- <img src="{{site.url}}/assets/svgs/BASE.Yellow.svg" alt="BASE.fi" class="d-none" id="logo-yellow" /> -->
-      <img src="{{site.url}}/assets/svgs/BASE.White.svg" alt="BASE.fi" />
+      <!-- <img src="{{site.url}}/assets/svgs/BASE.White.svg" alt="BASE.fi" /> -->
+      <img src="{{site.url}}/assets/svgs/BASE.Yellow2.svg" alt="BASE.fi" />
     </a>
 
     <ul class="navbar-nav navbar-nav-secondary order-lg-3">
@@ -13,10 +15,22 @@
           <span class="bi bi-list"></span>
         </a>
       </li>
-      <li class="nav-item d-none d-lg-block">
+      <!-- <li class="nav-item d-none d-lg-block">
         <a href="https://base.likeit.fi/jsp/Login.jsp" class="btn btn-outline-white rounded-pill ms-2">
           {{ 'Login' | i18n }}
         </a>
+      </li> -->
+      <li class="nav-item d-none d-lg-block">
+        <a href="https://www.instagram.com/basehenkilostopalvelut/" class="nav-link fs-5"><i
+            class="bi bi-instagram"></i></a>
+      </li>
+      <li class="nav-item d-none d-lg-block">
+        <a href="https://www.facebook.com/{% if locale === 'ru-RU' %}Baseruss{% else %}basefi{% endif %}"
+          class="nav-link fs-5"><i class="bi bi-facebook"></i></a>
+      </li>
+      <li class="nav-item d-none d-lg-block">
+        <a href="https://www.linkedin.com/company/base-henkil%C3%B6st%C3%B6palvelut-oy/" class="nav-link fs-5"><i
+            class="bi bi-linkedin"></i></a>
       </li>
     </ul>
 

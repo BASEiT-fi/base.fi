@@ -1,4 +1,18 @@
-<section class="cover overflow-hidden bg-black1 inverted1">
+<section class="py-15 bg-black1 overflow-hidden" data-aos="fade-in">
+  <div class="d-flex flex-column py-20 min-vh-100 container foreground">
+    <div class="row mt-auto justify-content-end">
+      <div class="col-md-8">
+        <h2 class="fw-bold display-2 text-black pb-5 text-end">Приходите к нам работать!</h2>
+      </div>
+    </div>
+  </div>
+  <figure class="background background-overlay filter-maven1"
+    style="background-image: url('{{site.url}}/assets/images/worker.1280.jpg')"
+    data-top-top="transform: translateY(0%);" data-top-bottom="transform: translateY(10%);"></figure>
+</section>
+
+{#
+<section class="cover overflow-hidden bg-black inverted">
   <div class="d-flex flex-column py-20 min-vh-100 container foreground">
     <div class="row mt-auto">
       <div class="col-md-8">
@@ -14,6 +28,7 @@
   </div>
   <span class="scroll-down"></span>
 </section>
+#}
 
 <section class="py-15 py-xl-20 bg-light">
   <div class="container">
@@ -38,12 +53,12 @@
       </div>
     </div>
 
-    <!-- <div class="row mb-4">
+    <div class="row mb-4">
       <div class="col-lg-7">
         <h2 class="fw-light">Мы ищем, ищем тех, кто:</h2>
       </div>
-    </div> -->
-    <!-- <div class="row g-3 g-xl-5 mb-10">
+    </div>
+    <div class="row g-3 g-xl-5 mb-10">
       <div class="col-lg-4">
         <div class="d-flex">
           <div class="icon-box icon-box-sm bg-primary rounded-circle me-2"><i class="bi bi-check2 text-dark"></i>
@@ -73,14 +88,14 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
 
-    <!-- <div class="row mb-4">
+    <div class="row mb-4">
       <div class="col-lg-7">
         <h2 class="fw-light">Мы предлагаем:</h2>
       </div>
-    </div> -->
-    <!-- <div class="row g-3 g-xl-5 mb-10">
+    </div>
+    <div class="row g-3 g-xl-5 mb-10">
       <div class="col-lg-4">
         <div class="d-flex">
           <div class="icon-box icon-box-sm bg-primary rounded-circle me-2"><i class="bi bi-check2 text-dark"></i>
@@ -109,7 +124,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </section>
 {% include "form.contacts.njk" %}
