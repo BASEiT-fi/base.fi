@@ -267,18 +267,18 @@ const populateJobListingBody = () => {
         >
           <div class="card-body">
             <div class="row align-items-center g-2 g-md-4 text-center text-md-start">
-              <div type="button" class="col-md-2 d-flex align-items-center">
+              <div type="button1" class="col-md-2 d-flex align-items-center">
               <i class="bi bi-clock me-1 fs-5 text-muted"></i>  
               ${job.molworkdurationcat || ''}
               </div>
-              <div type="button" class="col-md-6">
+              <div type="button1" class="col-md-6">
                 <p class="fs-lg mb-0">${job.name}</p>
                 <ul class="list-inline list-inline-separated text-muted">
                 <li class="list-inline-item">${job.fieldofwork ? job.fieldofwork.split('/').map(f => f.trim()).join(', ') : ''}</li>
                 <li class="list-inline-item">${job.locations.join(', ')}<i class="bi bi-geo ms-1 text-muted"></i></li>
                 </ul>
               </div>
-              <div type="button" class="col-md-2 d-flex align-items-center justify-content-center">
+              <div type="button1" class="col-md-2 d-flex align-items-center justify-content-center">
                 <i class="bi bi-person me-1 fs-5 text-muted"></i>  
                 ${job.numberofperson ? job.numberofperson + ' kpl' : ''}
               </div>
