@@ -1,0 +1,9 @@
+{% set entries = collections[locale] | eleventyNavigation %}
+{%- for entry in entries %}
+{% if entry.isOneOfBigButton %}
+<a href="{% if entry.url.startsWith('http') == false %}{{site.url}}{% endif %}{{ entry.url | url }}"
+  class="col-6 py-10 px-0 biggest-button fs-3 fw-bolder btn btn-primary text-uppercase {% if entry.isLeft %}active{% endif %}">
+  {{entry.title}}
+</a>
+{% endif %}
+{% endfor -%}

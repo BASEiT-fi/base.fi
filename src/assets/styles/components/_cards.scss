@@ -101,9 +101,15 @@
     z-index: 2;
   }
 
-  &:hover {
+  color: $white;
+  a {
     color: $white;
-
+  }
+  &:hover {
+    color: $black;
+    a {
+      color: $black;
+    }  
     .background {
       opacity: 1;
       transform: scale(1);
